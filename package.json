@@ -1,0 +1,36 @@
+{
+    "name": "paladiumlauncher",
+    "scripts": {
+        "start": "nw . --user-data-dir=./AppData/Orampia-Launcher",
+        "server": "npm install && node node_modules/emc-core-luuxis/utils/builder.js --v=1.12.2",
+        "build:win": "npm install && build --win --x64 --mirror https://npm.taobao.org/mirrors/nwjs/ .",
+        "build:mac": "npm install && build --mac --x64 --mirror https://npm.taobao.org/mirrors/nwjs/ .",
+        "build:linux": "npm install && build --linux --x64 --mirror https://npm.taobao.org/mirrors/nwjs/ .",
+        "build:all": "npm run build:linux && npm run build:mac && npm run build:win"
+    },
+    "version": "1.0.4",
+    "productName": "Paladium Launcher",
+    "description": "Paladium Launcher",
+    "main": "app/splash.html",
+    "author": "Paladium",
+    "window": {
+        "title": "Paladium Launcher",
+        "width": 400,
+        "height": 500,
+        "frame": false,
+        "resizable": false,
+        "position": "center",
+        "icon": "app/assets/images/icons/icon.png"
+    },
+    "chromium-args": "--enable-logging --v=1",
+    "manifestUrl": "http://download.paladium-pvp.fr/launcher/package.json",
+    "webkit": {
+        "plugin": true
+    },
+    "dependencies": {
+        "adm-zip": "^0.4.16",
+        "node-fetch": "^2.6.1",
+        "nw-autoupdater": "^1.1.11",
+        "xml-js": "^1.6.11"
+    }
+}
